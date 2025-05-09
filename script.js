@@ -7,7 +7,7 @@ const inputBox = document.querySelector(".inputBox");
 
 const getMovieInfo = async (movie) => {
   const myAPIKey = "f354af57";
-  const url = `http://www.omdbapi.com/?apikey=${myAPIKey}&t=${movie}`;
+  const url = `https://www.omdbapi.com/?apikey=${myAPIKey}&t=${movie}`;
 
   const response = await fetch(url);
   const data = await response.json();
@@ -21,8 +21,8 @@ const showMovieData = (data) => {
   const { Title, imdbRating, Genre, Released, Actors, Plot, Poster, Runtime } = data
 
   const movieElemant = document.createElement('div')
-
-
+ movieElemant.classList.add("movie-info")
+movieElemant.innerHTML = ``
 
 
   movieElemant.innerHTML = `<h2>${Title}</h2>
